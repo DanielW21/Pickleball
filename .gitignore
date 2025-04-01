@@ -1,1 +1,4 @@
 configs/
+venv/
+.DS_Store
+info.md
