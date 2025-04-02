@@ -5,7 +5,7 @@ import time
 import random
 
 def main():    
-    interested_event_codes = ["61463"]
+    interested_event_codes = ["61463","61457","61470","61472","61401","61404","61407"]
 
     start_time = time.time()
     
