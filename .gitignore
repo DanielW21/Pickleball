@@ -2,3 +2,10 @@ configs/
 venv/
 .DS_Store
 info.md
+
+# Local environment Tests
+example_runner.py
+runner.py 
+manual_runner.py
+runner.sh
+__pycache__

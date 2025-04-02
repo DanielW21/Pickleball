@@ -2,8 +2,7 @@ name: Notify on Booking Event
 
 on:
   schedule:
-    #- cron: "*/5 6-21 * * *"  # Every 5 minutes from 6 AM to 9:55 PM
-    #- cron: "*/30 22-23,0-5 * * *"  # Every 30 minutes from 10 PM to 5:30 AM
+    - cron: "*/30 * * * *"  # Runs every 30 minutes
   workflow_dispatch:
 
 jobs:
@@ -25,10 +24,13 @@ jobs:
 
       - name: Run the Script
         env:
-          EMAIL: ${{ secrets.EMAIL }}
-          PASSWORD: ${{ secrets.PASSWORD }}
           BOOKING_URL: ${{ secrets.BOOKING_URL }}
-          LOGIN_URL: ${{ secrets.LOGIN_URL }}
+          SPORTS_URL: ${{ secrets.SPORTS_URL }}
+          FITNESS_URL: ${{ secrets.FITNESS_URL }}
+          EMAIL: ${{ secrets.EMAIL }}
+          DISCORD_POSTS: ${{ secrets.DISCORD_POSTS }}
+          DISCORD_LOGS: ${{ secrets.DISCORD_LOGS }}
+          DISCORD_UID: ${{ secrets.DISCORD_UID }}
         run: |
           echo "Running script with secrets..."
-          python runner.py
+          python github_runner.py
