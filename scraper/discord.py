@@ -1,6 +1,7 @@
 import requests
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 class DiscordNotifier:
     def __init__(self, config):
@@ -10,7 +11,7 @@ class DiscordNotifier:
 
     def send_notification(self, available_events):
         """Send to appropriate channel based on content"""
-        scan_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        scan_time = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %H:%M:%S")
         
         if available_events:
             self._send_logs_message(f"✅ Scan at {scan_time}: ")
