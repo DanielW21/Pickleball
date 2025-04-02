@@ -6,12 +6,7 @@ import random
 
 def main():    
     interested_event_codes = ["61463"]
-    
-    # Random delay of 0 to 5 minutes before starting
-    print("⏳ Waiting for a random delay before starting...")
-    random_delay = random.randint(0, 300) 
-    time.sleep(random_delay)
-    
+
     start_time = time.time()
     
     # Load configuration
